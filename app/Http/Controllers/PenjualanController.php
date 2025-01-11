@@ -159,7 +159,7 @@ class PenjualanController extends Controller
         $detail = PenjualanDetail::with('produk')
             ->where('id_penjualan', session('id_penjualan'))
             ->get();
-        
+
         return view('penjualan.nota_kecil', compact('setting', 'penjualan', 'detail'));
     }
 

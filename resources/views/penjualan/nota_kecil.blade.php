@@ -30,11 +30,11 @@
         @media print {
             @page {
                 margin: 0;
-                size: 75mm 
+                size: 75mm
     ';
     ?>
-    <?php 
-    $style .= 
+    <?php
+    $style .=
         ! empty($_COOKIE['innerHeight'])
             ? $_COOKIE['innerHeight'] .'mm; }'
             : '}';
@@ -57,8 +57,9 @@
 <body onload="window.print()">
     <button class="btn-print" style="position: absolute; right: 1rem; top: rem;" onclick="window.print()">Print</button>
     <div class="text-center">
+        <img src="{{$setting->path_logo}}" width="100" alt="">
         <h3 style="margin: 0 5px 0 5px;">{{ strtoupper($setting->nama_perusahaan) }}</h3>
-        <h4 style="margin: 0 0 0 2px;">SMKN 1 Kadipaten</h4>
+        <h4 style="margin: 0 0 0 2px;">Onesevenstore</h4>
         <p>{{ strtoupper($setting->alamat) }}</p>
     </div>
     <br>
@@ -69,7 +70,7 @@
     <div class="clear-both" style="clear: both;"></div>
     <p>No: {{ tambah_nol_didepan($penjualan->id_penjualan, 10) }}</p>
     <p class="text-center">===================================</p>
-    
+
     <br>
     <table width="100%" style="border: 0;">
         @foreach ($detail as $item)

@@ -25,7 +25,7 @@ class LaporanController extends Controller
 
     // Set judul header aplikasi
     $sheet->mergeCells('A1:F1');
-    $sheet->setCellValue('A1', 'Laporan Pendapatan SMKN 1 Kadipaten');
+    $sheet->setCellValue('A1', 'Laporan Pendapatan Toko OneSeven store');
     $sheet->getStyle('A1')->getFont()->setBold(true)->setSize(14);
     $sheet->getStyle('A1')->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
 
@@ -127,7 +127,7 @@ class LaporanController extends Controller
     ]);
 
     // Buat nama file
-    $fileName = 'Laporan-Pendapatan-SMKN1-' . $awal . '-sd-' . $akhir . '.xlsx';
+    $fileName = 'Laporan-Pendapatan-OnesevenStore-' . $awal . '-sd-' . $akhir . '.xlsx';
 
     // Set header agar file bisa diunduh
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
