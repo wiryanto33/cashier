@@ -59,7 +59,6 @@
     <div class="text-center">
         <img src="{{$setting->path_logo}}" width="100" alt="">
         <h3 style="margin: 0 5px 0 5px;">{{ strtoupper($setting->nama_perusahaan) }}</h3>
-        <h4 style="margin: 0 0 0 2px;">Onesevenstore</h4>
         <p>{{ strtoupper($setting->alamat) }}</p>
     </div>
     <br>

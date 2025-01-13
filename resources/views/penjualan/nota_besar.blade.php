@@ -97,7 +97,7 @@
 
     <table width="100%">
         <tr>
-            <td><b>Terimakasih telah berbelanja dan sampai jumpa</b></td>
+            <td><b>Terimakasih telah berbelanja Sehat Selalu dan sampai jumpa</b></td>
             <td class="text-center">
                 Kasir
                 <br>
