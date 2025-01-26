@@ -13,6 +13,7 @@
                         <th>Nama</th>
                         <th>Telepon</th>
                         <th>Alamat</th>
+                        <th>Point</th>
                         <th><i class="fa fa-cog"></i></th>
                     </thead>
                     <tbody>
@@ -22,6 +23,7 @@
                                 <td>{{ $item->nama }}</td>
                                 <td>{{ $item->telepon }}</td>
                                 <td>{{ $item->alamat }}</td>
+                                <td>{{ $item->point }}</td>
                                 <td>
                                     <a href="#" class="btn btn-primary btn-xs btn-flat"
                                         onclick="pilihMember('{{ $item->id_member }}', '{{ $item->kode_member }}')">

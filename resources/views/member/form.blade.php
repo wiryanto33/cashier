@@ -32,10 +32,19 @@
                             <span class="help-block with-errors"></span>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="point" class="col-lg-2 col-lg-offset-1 control-label">Point</label>
+                        <div class="col-lg-6">
+                            <input type="number" name="point" id="point" class="form-control" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-sm btn-flat btn-primary"><i class="fa fa-save"></i> Simpan</button>
-                    <button type="button" class="btn btn-sm btn-flat btn-warning" data-dismiss="modal"><i class="fa fa-arrow-circle-left"></i> Batal</button>
+                    <button type="button" class="btn btn-sm btn-flat btn-warning" data-dismiss="modal"><i
+                            class="fa fa-arrow-circle-left"></i> Batal</button>
                 </div>
             </div>
         </form>

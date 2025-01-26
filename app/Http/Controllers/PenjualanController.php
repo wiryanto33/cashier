@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
 use App\Models\Penjualan;
 use App\Models\PenjualanDetail;
 use App\Models\Produk;
@@ -92,6 +93,16 @@ class PenjualanController extends Controller
             $produk = Produk::find($item->id_produk);
             $produk->stok -= $item->jumlah;
             $produk->update();
+        }
+
+        // Tambahkan poin ke member jika total pembelian minimal Rp10.000
+        if ($penjualan->id_member && $penjualan->bayar >= 10000) {
+            $member = Member::find($penjualan->id_member);
+            if ($member) {
+                $poin_ditambah = floor($penjualan->bayar / 10000); // Hitung poin berdasarkan kelipatan 10.000
+                $member->point = ($member->point ?? 0) + $poin_ditambah; // Tambahkan poin ke poin yang sudah ada
+                $member->save();
+            }
         }
 
         return redirect()->route('transaksi.selesai');

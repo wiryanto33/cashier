@@ -30,6 +30,7 @@
                             <th>Nama</th>
                             <th>Telepon</th>
                             <th>Alamat</th>
+                            <th>Point</th>
                             <th width="15%"><i class="fa fa-cog"></i></th>
                         </thead>
                     </table>
@@ -62,6 +63,7 @@
                 {data: 'nama'},
                 {data: 'telepon'},
                 {data: 'alamat'},
+                {data: 'point'},
                 {data: 'aksi', searchable: false, sortable: false},
             ]
         });
@@ -109,6 +111,7 @@
                 $('#modal-form [name=nama]').val(response.nama);
                 $('#modal-form [name=telepon]').val(response.telepon);
                 $('#modal-form [name=alamat]').val(response.alamat);
+                $('#modal-form [name=point]').val(response.point);
             })
             .fail((errors) => {
                 alert('Tidak dapat menampilkan data');
