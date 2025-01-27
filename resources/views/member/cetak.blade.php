@@ -29,8 +29,8 @@
         .logo img {
             position: absolute;
             margin-top: -5pt;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             right: 16pt;
         }
         .nama {
@@ -92,7 +92,7 @@
                                 </div>
                             </div>
                         </td>
-                        
+
                         @if (count($datamember) == 5)
                         <td class="text-center" style="width: 50%;"></td>
                         @endif

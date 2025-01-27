@@ -62,6 +62,13 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label for="min_belanja" class="col-lg-2 control-label">Point Minimal Pembelian</label>
+                        <div class="col-lg-2">
+                            <input type="number" name="min_belanja" class="form-control" id="min_belanja" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="diskon" class="col-lg-2 control-label">Diskon</label>
                         <div class="col-lg-2">
                             <input type="number" name="diskon" class="form-control" id="diskon" required>
@@ -126,9 +133,10 @@
                 $('[name=telepon]').val(response.telepon);
                 $('[name=alamat]').val(response.alamat);
                 $('[name=diskon]').val(response.diskon);
+                $('[name=min_belanja]').val(response.min_belanja);
                 $('[name=tipe_nota]').val(response.tipe_nota);
                 $('title').text(response.nama_perusahaan + ' | Pengaturan');
-                
+
                 let words = response.nama_perusahaan.split(' ');
                 let word  = '';
                 words.forEach(w => {

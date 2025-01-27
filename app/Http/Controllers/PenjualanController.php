@@ -95,11 +95,13 @@ class PenjualanController extends Controller
             $produk->update();
         }
 
+        $min_belanja = Setting::first()->min_belanja;
+
         // Tambahkan poin ke member jika total pembelian minimal Rp10.000
-        if ($penjualan->id_member && $penjualan->bayar >= 10000) {
+        if ($penjualan->id_member && $penjualan->bayar >= $min_belanja) {
             $member = Member::find($penjualan->id_member);
             if ($member) {
-                $poin_ditambah = floor($penjualan->bayar / 10000); // Hitung poin berdasarkan kelipatan 10.000
+                $poin_ditambah = floor($penjualan->bayar / $min_belanja); // Hitung poin berdasarkan kelipatan 10.000
                 $member->point = ($member->point ?? 0) + $poin_ditambah; // Tambahkan poin ke poin yang sudah ada
                 $member->save();
             }
