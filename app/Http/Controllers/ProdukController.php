@@ -24,14 +24,17 @@ class ProdukController extends Controller
     public function data(Request $request) {
         $produk = Produk::leftJoin('kategori', 'kategori.id_kategori', 'produk.id_kategori')
             ->select('produk.*', 'kategori.nama_kategori');
-    
+
         // Tambahkan filter berdasarkan kategori jika ada
         if ($request->id_kategori) {
             $produk->where('produk.id_kategori', $request->id_kategori);
         }
-    
+
         return datatables()
             ->of($produk)
+            ->filterColumn('nama_kategori', function ($produk, $keyword) {
+                $produk->whereRaw("LOWER(kategori.nama_kategori) like ?", ["%" . strtolower($keyword) . "%"]);
+            })
             ->addIndexColumn()
             ->addColumn('select_all', function ($produk) {
                 return '
@@ -41,6 +44,7 @@ class ProdukController extends Controller
             ->addColumn('kode_produk', function ($produk) {
                 return '<span class="label label-success">'. $produk->kode_produk .'</span>';
             })
+
             ->addColumn('harga_beli', function ($produk) {
                 return format_uang($produk->harga_beli);
             })
@@ -147,6 +151,8 @@ class ProdukController extends Controller
             $produk = Produk::find($id);
             $produk->delete();
         }
+
+
 
         return response(null, 204);
     }
